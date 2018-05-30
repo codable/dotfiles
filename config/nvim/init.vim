@@ -5,6 +5,7 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'jonathanfilip/vim-lucius'
 Plugin 'codable/diffreview'
 Plugin 'Conque-GDB'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -35,11 +36,9 @@ filetype plugin indent on    " required
 " Syntax
 syntax on
 
-" Use dark backgroud theme
-set background=light
-
-" Customizations
-colorscheme solarized
+" Color scheme
+set background=dark
+colorscheme lucius
 
 " Share clipboard with OS
 set clipboard=unnamed

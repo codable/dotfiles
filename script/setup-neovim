@@ -1,15 +1,7 @@
 #!/bin/sh
-setup_neovim()
-{
-    echo '# Setup neovim'
-    git clone --branch v0.2.2 https://github.com/neovim/neovim.git
-    cd neovim
-    make install CMAKE_EXTRA_FLAGS=-DCMAKE_INSTALL_PREFIX=$HOME/.local CMAKE_BUILD_TYPE=RelWithDebInfo
-    pip install --user neovim
-    test -d ~/.config || mkdir -p ~/.config
-    cp -r config/nvim ~/.config/
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
-    nvim +PluginInstall +qa
-}
-
-
+echo '# Setup neovim'
+sudo apt-get install neovim
+test -d ~/.config || mkdir -p ~/.config
+cp -r config/nvim ~/.config/
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+nvim +PluginInstall +qa
