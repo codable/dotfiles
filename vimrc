@@ -4,13 +4,14 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'codable/diffreview'
 Plugin 'Conque-GDB'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'elzr/vim-json'
 Plugin 'godlygeek/tabular'
 Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'junkblocker/patchreview-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'matchit.zip'
 Plugin 'moll/vim-node'
@@ -19,13 +20,11 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'roryokane/detectindent'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'steffanc/cscopemaps.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-markdown'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'vim-scripts/molokai'
 Plugin 'vim-scripts/php.vim-html-enhanced'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/winmanager'
@@ -35,11 +34,9 @@ filetype plugin indent on    " required
 " Syntax
 syntax on
 
-" Use dark backgroud theme
-set background=dark
-
-" Customizations
-colorscheme molokai
+" Color scheme
+set background=light
+colorscheme solarized
 
 " Share clipboard with OS
 set clipboard=unnamed
@@ -67,6 +64,4 @@ augroup DetectIndent
    autocmd BufReadPost *  DetectIndent
 augroup END
 
-nmap q[ :cprev<CR>
-nmap q] :cnext<CR>
 nmap <C-\>m :!cscope -Rqb<CR>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
