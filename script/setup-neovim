@@ -1,6 +1,6 @@
 #!/bin/sh
 echo '# Setup neovim'
-sudo apt-get install neovim
+sudo apt-get install -y neovim
 test -d ~/.config || mkdir -p ~/.config
 cp -r config/nvim ~/.config/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim

@@ -1,6 +1,6 @@
 #!/bin/sh
 echo '# Setup vim'
-sudo apt-get install neovim
+sudo apt-get install -y vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp vimrc ~/.vimrc
 vim +PluginInstall +qa
