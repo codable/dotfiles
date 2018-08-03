@@ -25,9 +25,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-markdown'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vim-scripts/php.vim-html-enhanced'
-Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/winmanager'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -38,6 +39,8 @@ syntax on
 " Color scheme
 set background=light
 colorscheme solarized
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='light'
 
 " Share clipboard with OS
 set clipboard=unnamed
