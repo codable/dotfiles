@@ -45,9 +45,6 @@ let g:airline_solarized_bg='light'
 " Share clipboard with OS
 set clipboard=unnamed
 
-" Use paste mode to solve paste indent issue
-set paste
-
 " Better tab
 set shiftwidth=4
 set tabstop=4
@@ -59,13 +56,15 @@ set expandtab
 " Always show status bar
 set laststatus=2
 
-" CtrlP
-map mo :CtrlP .<CR>
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.o,.*,*.jar,node_modules
-
+" Detect indent
 augroup DetectIndent
    autocmd!
    autocmd BufReadPost *  DetectIndent
 augroup END
 
+" Generate meta files for cscope and ctags
 nmap <C-\>m :!cscope -Rqb<CR>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" Setup clang format
+let g:clang_format#command='clang-format-5.0'
+let g:clang_format#auto_format=1
