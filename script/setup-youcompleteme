@@ -14,5 +14,12 @@ apt_install()
     sudo apt-get install -y cmake build-essential libboost-filesystem-dev libboost-regex-dev libboost-system-dev libclang-dev python-dev python3-dev bear
 }
 
-brew_install || apt_install
-(cd ~/.local/share/vim/plugged/YouCompleteMe && ./install.py --clang-completer --system-libclang --system-boost)
+main()
+{
+    echo "# Setup YouCompleteMe"
+
+    brew_install || apt_install
+    (cd ~/.local/share/vim/plugged/YouCompleteMe && ./install.py --clang-completer --system-libclang --system-boost)
+}
+
+main "$@"

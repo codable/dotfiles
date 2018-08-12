@@ -1,7 +1,27 @@
 #!/bin/sh
-echo '# Setup neovim'
-sudo apt-get install -y neovim
-test -d ~/.config || mkdir -p ~/.config
-cp -r config/nvim ~/.config/
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-nvim +PlugInstall +qa
+set -e
+
+apt_install()
+{
+    which apt-get || return 1
+
+    sudo apt-get install -y curl neovim cscope ctags
+}
+
+brew_install()
+{
+    which brew || return 1
+
+    brew install -y cscope ctags
+}
+
+main()
+{
+    echo '# Setup neovim'
+    test -d ~/.config || mkdir -p ~/.config
+    cp -r config/nvim ~/.config/
+    curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    nvim +PlugInstall +qa
+}
+
+main "$@"

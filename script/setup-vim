@@ -1,6 +1,28 @@
 #!/bin/sh
-echo '# Setup vim'
-sudo apt-get install -y vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-cp vimrc ~/.vimrc
-vim +PlugInstall +qa
+set -e
+
+apt_install()
+{
+    which apt-get || return 1
+
+    sudo apt-get install -y curl vim cscope ctags
+}
+
+brew_install()
+{
+    which brew || return 1
+
+    brew install -y cscope ctags
+}
+
+main()
+{
+    echo '# Setup vim'
+
+    brew_install || apt_install
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    cp vimrc ~/.vimrc
+    vim +PlugInstall +qa
+}
+
+main "$@"
