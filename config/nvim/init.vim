@@ -1,37 +1,37 @@
-" Vundle required
-set nocompatible              " be iMproved, required
-filetype off                  " required
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle')
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'codable/diffreview'
-Plugin 'Conque-GDB'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'elzr/vim-json'
-Plugin 'godlygeek/tabular'
-Plugin 'haya14busa/vim-poweryank'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'majutsushi/tagbar'
-Plugin 'matchit.zip'
-Plugin 'moll/vim-node'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'pangloss/vim-javascript'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'roryokane/detectindent'
-Plugin 'scrooloose/nerdtree'
-Plugin 'steffanc/cscopemaps.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-markdown'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'vim-scripts/php.vim-html-enhanced'
-Plugin 'vim-scripts/winmanager'
-call vundle#end()            " required
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.local/share/vim/plugged')
+Plug 'VundleVim/Vundle.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'codable/diffreview'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'elzr/vim-json'
+Plug 'godlygeek/tabular'
+Plug 'haya14busa/vim-poweryank'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'majutsushi/tagbar'
+Plug 'moll/vim-node'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'pangloss/vim-javascript'
+Plug 'rhysd/vim-clang-format'
+Plug 'roryokane/detectindent'
+Plug 'scrooloose/nerdtree'
+Plug 'steffanc/cscopemaps.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-markdown'
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/Conque-GDB'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/php.vim-html-enhanced'
+Plug 'vim-scripts/winmanager'
+" Initialize plugin system
+call plug#end()
+
 filetype plugin indent on    " required
 
 " Syntax

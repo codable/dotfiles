@@ -1,6 +1,6 @@
 #!/bin/sh
 echo '# Setup vim'
 sudo apt-get install -y vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp vimrc ~/.vimrc
-vim +PluginInstall +qa
+vim +PlugInstall +qa

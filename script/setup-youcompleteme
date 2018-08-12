@@ -4,14 +4,14 @@ brew_install()
 {
     which brew || return 1
 
-    brew install cmake
+    brew install cmake bear
 }
 
 apt_install()
 {
     which apt-get || return 1
 
-    sudo apt-get install -y python-dev python3-dev
+    sudo apt-get install -y python-dev python3-dev bear
 }
 
 brew_install || apt_install
