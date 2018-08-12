@@ -15,4 +15,4 @@ apt_install()
 }
 
 brew_install || apt_install
-(cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer)
+(cd ~/.local/share/vim/plugged/YouCompleteMe && ./install.py --clang-completer)
