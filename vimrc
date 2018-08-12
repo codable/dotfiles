@@ -1,7 +1,6 @@
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/vim/plugged')
-Plug 'VundleVim/Vundle.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'codable/diffreview'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -71,3 +70,4 @@ let g:clang_format#auto_format=1
 
 " Setup YouCompleteMe
 set encoding=utf-8
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
