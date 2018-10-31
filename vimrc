@@ -64,7 +64,7 @@ augroup END
 nmap <C-\>m :!cscope -Rqb<CR>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Setup clang format
-let g:clang_format#command='clang-format-5.0'
+let g:clang_format#command='clang-format-6.0'
 let g:clang_format#auto_format=1
 let g:clang_format#enable_fallback_style=0
 
