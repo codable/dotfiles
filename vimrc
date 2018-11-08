@@ -71,3 +71,6 @@ let g:clang_format#enable_fallback_style=0
 " Setup YouCompleteMe
 set encoding=utf-8
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+" Backspace fix
+set backspace=indent,eol,start
