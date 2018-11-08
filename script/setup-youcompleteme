@@ -4,7 +4,7 @@ brew_install()
 {
     which brew || return 1
 
-    brew install cmake bear
+    brew install cmake boost bear
 }
 
 apt_install()
