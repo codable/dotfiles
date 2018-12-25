@@ -19,7 +19,7 @@ main()
     echo "# Setup YouCompleteMe"
 
     brew_install || apt_install
-    (cd ~/.local/share/vim/plugged/YouCompleteMe && ./install.py --clang-completer --system-libclang --system-boost)
+    (cd ~/.local/share/vim/plugged/YouCompleteMe && ./install.py --clang-completer --rust-completer --ts-completer --system-boost)
 }
 
 main "$@"
