@@ -1,9 +1,11 @@
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/vim/plugged')
-Plug 'altercation/vim-colors-solarized'
+Plug 'Chiel92/vim-autoformat'
+Plug 'Valloric/YouCompleteMe'
 Plug 'codable/diffreview'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dense-analysis/ale'
 Plug 'digitaltoad/vim-jade'
 Plug 'elzr/vim-json'
 Plug 'godlygeek/tabular'
@@ -16,12 +18,10 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
 Plug 'rhysd/vim-clang-format'
 Plug 'roryokane/detectindent'
-Plug 'scrooloose/nerdtree'
 Plug 'steffanc/cscopemaps.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
-Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/DoxygenToolkit.vim'
@@ -66,8 +66,10 @@ nmap <C-\>m :!cscope -Rqb<CR>:!ctags -R --c++-kinds=+p --fields=+iaS --extras=+q
 
 " Setup clang format
 let g:clang_format#command='clang-format-6.0'
-let g:clang_format#auto_format=1
+let g:clang_format#detect_style_file=1
 let g:clang_format#enable_fallback_style=0
+let g:formatter_yapf_style = 'google'
+let g:formatters_python = ['yapf']
 
 " Setup YouCompleteMe
 set encoding=utf-8
