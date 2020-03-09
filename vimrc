@@ -11,6 +11,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-node'
+Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
 Plug 'rhysd/vim-clang-format'
@@ -37,8 +38,7 @@ syntax on
 
 " Color scheme
 set background=dark
-colorscheme solarized
-let g:airline_theme='solarized'
+colorscheme gruvbox
 let g:airline_solarized_bg='dark'
 
 " Share clipboard with OS
