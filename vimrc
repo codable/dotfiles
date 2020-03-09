@@ -79,3 +79,7 @@ set backspace=indent,eol,start
 " The Silver Searcher
 let g:ackprg = 'ag --vimgrep'
 nnoremap <leader>k :Ack \\b<cword>\\b<CR>
+
+" The Git grep
+let g:ackprg = 'ag --vimgrep'
+nnoremap <leader>g :Ggrep \\b<cword>\\b<CR>
