@@ -62,7 +62,7 @@ augroup DetectIndent
 augroup END
 
 " Generate meta files for cscope and ctags
-nmap <C-\>m :!cscope -Rqb<CR>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nmap <C-\>m :!cscope -Rqb<CR>:!ctags -R --c++-kinds=+p --fields=+iaS --extras=+q --exclude=output --exclude=results .<CR>
 
 " Setup clang format
 let g:clang_format#command='clang-format-6.0'
