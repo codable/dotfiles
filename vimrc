@@ -83,3 +83,5 @@ nnoremap <leader>k :Ack \\b<cword>\\b<CR>
 " The Git grep
 let g:ackprg = 'ag --vimgrep'
 nnoremap <leader>g :Ggrep \\b<cword>\\b<CR>
+
+set exrc
