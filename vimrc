@@ -9,6 +9,7 @@ Plug 'elzr/vim-json'
 Plug 'godlygeek/tabular'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
 Plug 'moll/vim-node'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
@@ -35,10 +36,10 @@ filetype plugin indent on    " required
 syntax on
 
 " Color scheme
-set background=light
+set background=dark
 colorscheme solarized
 let g:airline_theme='solarized'
-let g:airline_solarized_bg='light'
+let g:airline_solarized_bg='dark'
 
 " Share clipboard with OS
 set clipboard=unnamed
@@ -74,3 +75,7 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " Backspace fix
 set backspace=indent,eol,start
+
+" The Silver Searcher
+let g:ackprg = 'ag --vimgrep'
+nnoremap <leader>k :Ack <cword><CR>
