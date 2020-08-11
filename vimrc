@@ -86,4 +86,7 @@ nnoremap <leader>k :Ack \\b<cword>\\b<CR>
 let g:ackprg = 'ag --vimgrep'
 nnoremap <leader>g :Ggrep \\b<cword>\\b<CR>
 
+" Search selection
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 set exrc
