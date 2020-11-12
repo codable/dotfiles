@@ -88,5 +88,6 @@ nnoremap <leader>g :Ggrep \\b<cword>\\b<CR>
 
 " Search selection
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+vnoremap /g y:Ggrep '<C-R>=escape(@",'/\')<CR>'<CR>
 
 set exrc
