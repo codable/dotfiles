@@ -90,4 +90,6 @@ nnoremap <leader>g :Ggrep \\b<cword>\\b<CR>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 vnoremap /g y:Ggrep '<C-R>=escape(@",'/\')<CR>'<CR>
 
+setlocal spell spelllang=en_us
+
 set exrc
