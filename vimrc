@@ -97,4 +97,7 @@ vnoremap /g y:Ggrep '<C-R>=escape(@",'/\')<CR>'<CR>
 
 setlocal spell spelllang=en_us
 
+" only search the current directory
+let g:ctrlp_working_path_mode = 0
+
 set exrc
