@@ -79,6 +79,9 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " Backspace fix
 set backspace=indent,eol,start
 
+" Vertical diff
+set diffopt+=vertical
+
 " The Silver Searcher
 let g:ackprg = 'ag --vimgrep'
 nnoremap <leader>k :Ack \\b<cword>\\b<CR>
