@@ -14,6 +14,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-node'
+Plug 'uzxmx/vim-widgets'
 Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pboettch/vim-cmake-syntax'
@@ -45,7 +46,9 @@ colorscheme gruvbox
 let g:airline_solarized_bg='dark'
 
 " Share clipboard with OS
-set clipboard=exclude:.*
+if !has('nvim')
+  set clipboard=exclude:.*
+endif
 
 " Better tab
 set shiftwidth=4
@@ -72,10 +75,6 @@ let g:clang_format#detect_style_file=1
 let g:clang_format#enable_fallback_style=0
 let g:formatter_yapf_style = 'google'
 let g:formatters_python = ['yapf']
-
-" Setup YouCompleteMe
-set encoding=utf-8
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " Backspace fix
 set backspace=indent,eol,start
@@ -105,8 +104,6 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 set ttyfast
 set lazyredraw
 set cursorline
-
-set paste
 
 set diffopt+=vertical
 
@@ -141,6 +138,18 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -152,8 +161,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call ShowDocumentation()<CR>
+" Use Q to show documentation in preview window
+nnoremap <silent> Q :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
