@@ -73,7 +73,7 @@ always-show-universal-access-status=true
 high-contrast=false
 
 [org/gnome/desktop/a11y/magnifier]
-mag-factor=12.0
+mag-factor=13.0
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'YaST']
@@ -324,14 +324,14 @@ locations=@av []
 enabled=true
 
 [org/gnome/terminal/legacy/keybindings]
-close-tab='<Shift><Super>w'
-close-window='<Shift><Super>q'
+close-tab='<Super>w'
+close-window='<Super>q'
 copy='<Super>c'
 find='<Shift><Super>f'
 move-tab-left='<Super>braceleft'
 move-tab-right='<Super>braceright'
-new-tab='<Shift><Super>t'
-new-window='<Shift><Super>n'
+new-tab='<Super>t'
+new-window='<Super>n'
 paste='<Super>v'
 select-all='<Super>a'
 switch-to-tab-1='<Super>1'
