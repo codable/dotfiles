@@ -1,7 +1,6 @@
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/vim/plugged')
-Plug 'Chiel92/vim-autoformat'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
@@ -19,7 +18,6 @@ Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pboettch/vim-cmake-syntax'
 Plug 'pangloss/vim-javascript'
-Plug 'rhysd/vim-clang-format'
 Plug 'roryokane/detectindent'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'tpope/vim-abolish'
@@ -28,6 +26,7 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-autoformat/vim-autoformat'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/winmanager'
@@ -63,9 +62,12 @@ set laststatus=2
 
 " Detect indent
 augroup DetectIndent
-   autocmd!
-   autocmd BufReadPost *  DetectIndent
+  autocmd!
+  autocmd BufReadPost *  DetectIndent
 augroup END
+
+" Autoformat
+au BufWrite * :Autoformat
 
 set colorcolumn=80
 
@@ -136,7 +138,7 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort
   let col = col('.') - 1
