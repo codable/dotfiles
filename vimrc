@@ -271,3 +271,5 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 nnoremap gl :CtrlP <C-R>=FugitiveWorkTree()<CR><CR>
+
+set mouse=
