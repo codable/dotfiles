@@ -1,0 +1,56 @@
+keypress_delay_ms: 10
+
+# `modmap` section
+# For key-to-key remapping (no combinations). Remapping a key to a modifier key (e.g. CapsLock to Control_L) is supported only in `modmap` section
+#modmap:
+#  - name: Swap ⌘ and Alt
+##    application:
+##      not: [org.gnome.Terminal, org.gnome.Console]
+#    remap:
+#      LeftAlt: LeftMeta
+#      LeftMeta: LeftAlt
+#      RightAlt: RightMeta
+#      RightMeta: RightAlt
+# `keymap` section
+# For remapping a sequence of key combinations to another sequence of key combinations
+keymap:
+#  - name: Test
+#    remap:
+#      Shift-A: b
+  - name: Chrome
+    application:
+      only: [Google-chrome, google-chrome, /chrome-.*-Default/]
+    remap:
+      Ctrl-A: Home
+      Ctrl-E: End
+      Ctrl-W: Ctrl-V
+      Super-A: Ctrl-A
+      Super-W: Ctrl-W
+      Super-E: Ctrl-E
+      Super-C: Ctrl-C
+      Super-V: Ctrl-V
+      Super-X: Ctrl-X
+      Super-Z: Ctrl-Z
+      Super-F: Ctrl-F
+      Super-R: Ctrl-R
+      Super-L: Ctrl-L
+      Super-T: Ctrl-T
+      Super-Y: Ctrl-Y
+      Super-U: Ctrl-U
+      Super-O: Ctrl-O
+      Super-P: Ctrl-P
+      Super-A: Ctrl-A
+      Super-S: Ctrl-S
+      Super-1: Ctrl-1
+      Super-2: Ctrl-2
+      Super-3: Ctrl-3
+      Super-4: Ctrl-4
+      Super-5: Ctrl-5
+      Super-6: Ctrl-6
+      Super-7: Ctrl-7
+      Super-8: Ctrl-8
+      Super-9: Ctrl-9
+      Super-LeftBrace: Alt-Left
+      Super-RightBrace: Alt-Right
+      Super-Shift-LeftBrace: Ctrl-Shift-Tab
+      Super-Shift-RightBrace: Ctrl-Tab
